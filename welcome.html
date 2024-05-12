@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Text with Animation</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-family: "Garamond", serif;
+  }
+  .text-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .bhs-text, .orchestra-text {
+    font-family: "Garamond", serif;
+    font-size: 5vw;
+    color: white;
+    position: relative;
+    animation: moveUp 1s ease forwards, fadeOut 3.2s ease forwards;
+  }
+  .bhs-text {
+    margin-bottom: 1em;
+  }
+  @keyframes moveUp {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-30px);
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 1);
+    }
+    70% {
+      opacity: 1;
+      text-shadow: 0 0 90px rgba(255, 255, 255, 0);
+    }
+    100% {
+      opacity: 0;
+      text-shadow: 0 0 90px rgba(255, 255, 255, 0);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="text-container">
+    <div class="bhs-text">BHS</div>
+    <div class="orchestra-text">Orchestra</div>
+  </div>
+</body>
+</html>
